@@ -22,3 +22,11 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
         with:
           arguments: build
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: |
+            build/libs/*.jar
+            # 如果还有其他需要上传的目录或文件，可以在这里添加更多路径
